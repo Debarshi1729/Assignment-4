@@ -1,46 +1,32 @@
 #include<iostream>
-#include<conio.h>
 using namespace std;
-int main()
+int nextPrime(int x)
 {
-int x1;
-int x2;
-int x3;
-int Number=3;
-int Banner=0;
-cout<<"Please enter the no of lines ";
-cin>> x1;
-int d= x1;
-for(x2=1;x2<= x1; x2++)
-{
-for(int e=1;e<=d;e++)
-{
-cout<<" ";
+	x++;int i;
+	while(x!=0){
+	for(i=2;i<x;i++)
+	{
+		if(x%i==0)
+		 break;
+	}
+	if(i==x) return x;
+	x++;
 }
-if(x2==1)
-{
-cout<<"2\n";
 }
-else
-{
-for(x3=0; x3!= x2;)
-{
-Banner=0;
-for ( int k=2;k<Number;k++)
-{
-if((Number%k)==0)
-Banner=1;
-}
-if(Banner==0)
-{ x3++;
-cout<<Number<<" ";
-}
-Number++;
-}
-cout<<"\n";
-}
-d--;
-}
-getch();
+int main(){
+   int n;
+   cin>>n;
+   int k=2;
+   for(int i=1;i<=n;i++)
+   {
+   	for(int j=1;j<=n-i;j++)
+   	 cout<<" ";
+   	for(int j=1;j<=i;j++)
+   	 {
+		cout<<k<<" ";
+		k=nextPrime(k);
+	}
+   	cout<<endl;
+   }
 return 0;
 }
